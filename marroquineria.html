@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochilas y Carteras de Cuero | Fábrica de Marroquinería | Jazmin Bags</title>
+    <meta name="description" content="Catálogo directo de fábrica de Jazmin Bags by Luis. Comprá mochilas de cuero, carteras de oficina y bandoleras de cuerina resistentes. Calidad y diseño urbano.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Catálogo de Marroquinería - Jazmin Bags",
+      "description": "Fábrica directa de mochilas de cuero, carteras y bandoleras.",
+      "url": "https://tuweb.com/marroquineria.html"
+    }
+    </script>
+
+    <style>
+        /* VARIABLES Y RESET (Consistentes con la Home) */
+        :root {
+            --primary-color: #1A1A1A;
+            --secondary-color: #D4AF37;
+            --accent-color: #C17767;
+            --text-color: #333333;
+            --bg-color: #FAFAFA;
+            --white: #FFFFFF;
+            
+            --glass-bg: rgba(255, 255, 255, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-blur: blur(12px);
+            
+            --font-headings: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            
+            --transition: all 0.3s ease;
+            --base-font-size: 16px;
+        }
+
+        /* CLASES DE ACCESIBILIDAD (Añadidas por JS) */
+        body.large-text { --base-font-size: 18px; }
+        body.high-contrast {
+            --primary-color: #000000; --secondary-color: #FFFF00; --accent-color: #FFFF00; --text-color: #FFFFFF;
+            --bg-color: #000000; --white: #000000; --glass-bg: rgba(0, 0, 0, 0.9); --glass-border: rgba(255, 255, 0, 0.5);
+        }
+        body.high-contrast header { background: #000; border-bottom: 2px solid #FFFF00; }
+        body.high-contrast .category-hero::before { background: rgba(0,0,0,0.8); }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); font-size: var(--base-font-size); color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; overflow-x: hidden; transition: font-size 0.3s ease, background-color 0.3s ease; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        /* HEADER & NAVEGACIÓN (Enlaces relativos) */
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(250, 250, 250, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); transition: var(--transition); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-family: var(--font-headings); font-size: 1.5rem; color: var(--primary-color); font-weight: 700; }
+        .nav-links { display: none; }
+        .menu-toggle { display: block; cursor: pointer; font-size: 1.5rem; color: var(--primary-color); }
+        .nav-links .active-link { color: var(--secondary-color); font-weight: 700; }
+
+        /* HERO DE CATEGORÍA (CORREGIDO: Imagen de Fondo) */
+        .category-hero { 
+            padding: 180px 0 100px; 
+            text-align: center; 
+            position: relative; 
+            overflow: hidden; 
+            /* Imagen específica de marroquinería de Unsplash */
+            background: url('https://images.unsplash.com/photo-1549497538-303791108f94?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+        }
+        /* Overlay oscuro para legibilidad (CORREGIDO) */
+        .category-hero::before { 
+            content: ""; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.5); /* Sutilmente más oscuro para asegurar contraste */
+            z-index: 1; 
+            transition: var(--transition);
+        }
+        .hero-content { position: relative; z-index: 2; color: #FFF; }
+        .hero-content h1 { font-family: var(--font-headings); font-size: 2.8rem; margin-bottom: 1rem; line-height: 1.1; }
+        .hero-content p { font-size: 1.15rem; max-width: 650px; margin: 0 auto; opacity: 0.9; }
+
+        /* GRILLA E-COMMERCE (6 Productos - MOFU) */
+        .ecommerce-section { padding: 6rem 0; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 3rem; }
+        
+        .product-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: var(--transition); border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; position: relative; top: 0; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-color: var(--secondary-color); }
+        
+        .product-image { height: 320px; width: 100%; position: relative; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; transition: transform 0.5s ease; object-position: center; }
+        .product-card:hover .product-image img { transform: scale(1.06); }
+        
+        .product-tag { position: absolute; top: 15px; left: 15px; background: var(--secondary-color); color: var(--primary-color); padding: 0.3rem 0.8rem; font-size: 0.8rem; font-weight: 700; border-radius: 4px; z-index: 2; }
+        
+        .product-info { padding: 1.8rem; display: flex; flex-direction: column; flex-grow: 1; text-align: left; }
+        .product-title { font-family: var(--font-headings); font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--primary-color); }
+        .product-desc { font-size: 0.95rem; color: #666; margin-bottom: 1rem; flex-grow: 1; }
+        .product-price { font-weight: 700; font-size: 1.25rem; color: var(--accent-color); margin-bottom: 1.5rem; display: block; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1rem; }
+        
+        .btn-buy { margin-top: auto; display: block; text-align: center; background-color: var(--primary-color); color: var(--white); padding: 0.9rem; border-radius: 4px; font-weight: 700; transition: var(--transition); width: 100%; border: 1px solid transparent; }
+        .btn-buy:hover { background-color: var(--accent-color); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(193, 119, 103, 0.3); }
+
+        /* FOOTER (CORREGIDO: Copiado de la Home) */
+        footer { background-color: var(--primary-color); color: #FAFAFA; padding: 4rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 4rem;}
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; text-align: center; }
+        .footer-brand .footer-logo { font-family: var(--font-headings); font-size: 2rem; display: block; margin-bottom: 1rem; color: #FAFAFA;}
+        .footer-brand p { opacity: 0.8; font-size: 0.95rem; }
+        .footer-links h4, .footer-social-container h4 { font-family: var(--font-headings); font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--secondary-color); }
+        .footer-links ul li { margin-bottom: 0.8rem; }
+        .footer-links a { opacity: 0.8; transition: var(--transition); }
+        .footer-links a:hover { opacity: 1; color: var(--secondary-color); padding-left: 5px; }
+        .social-icons { display: flex; gap: 1.5rem; justify-content: center; }
+        .social-icons a svg { width: 28px; height: 28px; fill: #FAFAFA; transition: var(--transition); opacity: 0.8; }
+        .social-icons a:hover svg { fill: var(--secondary-color); opacity: 1; transform: translateY(-3px); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.6; font-size: 0.85rem; }
+
+        /* CTAs FLOTANTES (WA y Accesibilidad - CORREGIDO: Copiado de la Home) */
+        .wa-floating { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: rgba(37, 211, 102, 0.7); backdrop-filter: var(--glass-blur); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 6px 20px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.2); transition: var(--transition); color: #FFF; font-size: 1.8rem; font-weight: bold;}
+        .wa-floating:hover { background: rgba(37, 211, 102, 0.9); transform: translateY(-5px) scale(1.05); }
+        .a11y-floating { position: fixed; bottom: 30px; left: 30px; width: 50px; height: 50px; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 6px 20px rgba(0,0,0,0.15); border: 1px solid var(--glass-border); transition: var(--transition); cursor: pointer; color: var(--primary-color); }
+        .a11y-floating:hover { transform: translateY(-3px); background: var(--white); }
+        .a11y-floating svg { width: 24px; height: 24px; fill: currentColor; }
+        .a11y-panel { position: fixed; bottom: 90px; left: 30px; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: 8px; padding: 1.5rem; width: 250px; z-index: 998; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(20px); opacity: 0; pointer-events: none; transition: var(--transition); }
+        .a11y-panel.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
+        .a11y-panel h4 { margin-bottom: 1rem; color: var(--primary-color); font-family: var(--font-headings); border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 0.5rem;}
+        .a11y-option { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; color: var(--text-color); font-size: 0.9rem; }
+        .toggle-switch { position: relative; width: 40px; height: 20px; background: #ccc; border-radius: 20px; cursor: pointer; transition: background 0.3s; }
+        .toggle-switch::after { content: ''; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; background: #fff; border-radius: 50%; transition: transform 0.3s; }
+        .toggle-switch.active { background: var(--accent-color); }
+        .toggle-switch.active::after { transform: translateX(20px); }
+
+        /* MEDIA QUERIES */
+        @media (min-width: 768px) {
+            .nav-links { display: flex; gap: 2rem; }
+            .menu-toggle { display: none; }
+            .category-hero h1 { font-size: 3.5rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr 1fr; text-align: left; }
+            .social-icons { justify-content: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Jazmin Bags</a>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">☰</div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="marroquineria.html" class="active-link">Marroquinería</a></li>
+                    <li><a href="complementos.html">Complementos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-hero">
+            <div class="container hero-content">
+                <h1>Mochilas y Carteras de Cuero</h1>
+                <p>Nuestra línea pilar de fábrica. Descubrí diseños urbanos de alta durabilidad en cuero genuino vacuno y cuerina premium texturada, pensados para acompañarte todo el día.</p>
+            </div>
+        </section>
+
+        <section class="ecommerce-section">
+            <div class="container">
+                <div class="products-grid">
+                    
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag">Más Vendido</span>
+                            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=600&auto=format&fit=crop" alt="Mochila de cuero urbano mujer" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-title">Mochila Urbana "Milán"</h2>
+                            <p class="product-desc">Cuero vacuno genuino con costuras reforzadas. Capacidad para notebook de 13". Múltiples bolsillos internos.</p>
+                            <span class="product-price">$85.000 ARS</span>
+                            <a href="#" class="btn-buy">Agregar al Carrito</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag">Nuevo</span>
+                            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop" alt="Cartera Tote Negra grande oficina" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-title">Tote Bag "Ejecutiva"</h2>
+                            <p class="product-desc">Cuerina premium texturada de alta resistencia. Compartimento central amplio, ideal para la oficina o estudio.</p>
+                            <span class="product-price">$54.000 ARS</span>
+                            <a href="#" class="btn-buy">Agregar al Carrito</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?q=80&w=600&auto=format&fit=crop" alt="Bandolera pequeña cruzada" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-title">Bandolera "Roma"</h2>
+                            <p class="product-desc">Diseño compacto y urbano en cuerina lisa. Correa ajustable y herrajes dorados de calidad de exportación.</p>
+                            <span class="product-price">$32.500 ARS</span>
+                            <a href="#" class="btn-buy">Agregar al Carrito</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=600&auto=format&fit=crop" alt="Cartera elegante de mano" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-title">Bolso de Mano "París"</h2>
+                            <p class="product-desc">Elegancia estructurada en cuero sintético rígido. Perfecto para eventos o salidas de noche. Incluye correa desmontable.</p>
+                            <span class="product-price">$48.000 ARS</span>
+                            <a href="#" class="btn-buy">Agregar al Carrito</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag" style="background: #333; color:#fff;">Últimos 2</span>
+                            <img src="https://images.unsplash.com/photo-1614179689702-355944cd0918?q=80&w=600&auto=format&fit=crop" alt="Mochila suela cuero marrón" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-title">Mochila "Suela Clásica"</h2>
+                            <p class="product-desc">Cuero rústico tratado al aceite. Un clásico atemporal que envejece con carácter. Herrajes de bronce.</p>
+                            <span class="product-price">$92.000 ARS</span>
+                            <a href="#" class="btn-buy">Agregar al Carrito</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=600&auto=format&fit=crop" alt="Bolso de hombro rojo" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-title">Bolso "Carmín"</h2>
+                            <p class="product-desc">Dale un toque de color a tu outfit diario. Cuerina liviana y flexible con asas cómodas para el hombro.</p>
+                            <span class="product-price">$41.000 ARS</span>
+                            <a href="#" class="btn-buy">Agregar al Carrito</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Jazmin Bags</a>
+                    <p>Diseño, calidad y venta directa de fábrica. Encontrá tu estilo urbano y funcional con nosotros.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="marroquineria.html">Marroquinería</a></li>
+                        <li><a href="complementos.html">Complementos y Abrigos</a></li>
+                        <li><a href="contacto.html">Contacto y Presupuestos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social-container">
+                    <h4>Seguinos</h4>
+                    <p style="opacity: 0.8; margin-bottom: 1rem; font-size: 0.9rem;">Descubrí novedades y procesos de fabricación en nuestras redes.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram" target="_blank">
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" target="_blank">
+                            <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok" target="_blank">
+                            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.04.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.36-1.91 1.64-4.52 2.36-6.95 2.06-2.61-.31-5.02-1.84-6.33-4.1-1.2-2.07-1.45-4.66-.63-6.9 1.12-2.92 4.09-4.89 7.18-4.78v4.06c-1.25-.13-2.66.19-3.55 1.1-.9.91-1.15 2.37-.62 3.52.48 1.05 1.52 1.8 2.69 1.94 1.52.19 3.09-.59 3.73-1.99.3-.64.44-1.38.44-2.1V.02h2.76z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Tigre, Buenos Aires, Argentina | © 2026 Jazmin Bags by Luis. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="a11y-floating" id="a11y-btn" aria-label="Opciones de Accesibilidad" title="Accesibilidad">
+        <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/></svg>
+    </div>
+
+    <div class="a11y-panel" id="a11y-panel">
+        <h4>Accesibilidad</h4>
+        <div class="a11y-option">
+            <span>Aumentar Texto</span>
+            <div class="toggle-switch" id="toggle-text"></div>
+        </div>
+        <div class="a11y-option">
+            <span>Alto Contraste</span>
+            <div class="toggle-switch" id="toggle-contrast"></div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5491100000000?text=Hola! Quiero consultar por precios de fábrica de carteras." class="wa-floating" target="_blank" rel="noopener noreferrer">
+        W
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Menú Mobile & Sticky Header
+            const menuToggle = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            menuToggle.addEventListener('click', () => {
+                navLinks.style.display = (navLinks.style.display === 'flex' ? 'none' : 'flex');
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.flexDirection = 'column'; navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%'; navLinks.style.left = '0'; navLinks.style.width = '100%';
+                    navLinks.style.background = 'rgba(250, 250, 250, 0.95)'; navLinks.style.padding = '1rem 0';
+                    navLinks.style.textAlign = 'center';
+                }
+            });
+
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                header.style.boxShadow = (window.scrollY > 50 ? '0 4px 25px rgba(0,0,0,0.12)' : 'none');
+            });
+
+            // LÓGICA DE ACCESIBILIDAD
+            const a11yBtn = document.getElementById('a11y-btn');
+            const a11yPanel = document.getElementById('a11y-panel');
+            const toggleText = document.getElementById('toggle-text');
+            const toggleContrast = document.getElementById('toggle-contrast');
+
+            a11yBtn.addEventListener('click', () => { a11yPanel.classList.toggle('active'); });
+            document.addEventListener('click', (e) => {
+                if (!a11yPanel.contains(e.target) && !a11yBtn.contains(e.target)) {
+                    a11yPanel.classList.remove('active');
+                }
+            });
+
+            toggleText.addEventListener('click', () => {
+                toggleText.classList.toggle('active');
+                document.body.classList.toggle('large-text');
+            });
+
+            toggleContrast.addEventListener('click', () => {
+                toggleContrast.classList.toggle('active');
+                document.body.classList.toggle('high-contrast');
+            });
+        });
+    </script>
+</body>
+</html>
