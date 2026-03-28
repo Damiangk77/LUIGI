@@ -49,28 +49,16 @@
             --base-font-size: 16px;
         }
 
-        /* CLASES DE ACCESIBILIDAD (Añadidas por JS) */
-        body.large-text {
-            --base-font-size: 18px;
-        }
+        /* CLASES DE ACCESIBILIDAD */
+        body.large-text { --base-font-size: 18px; }
 
         body.high-contrast {
-            --primary-color: #000000;
-            --secondary-color: #FFFF00;
-            --accent-color: #FFFF00;
-            --text-color: #FFFFFF;
-            --bg-color: #000000;
-            --white: #000000;
-            --glass-bg: rgba(0, 0, 0, 0.9);
-            --glass-border: rgba(255, 255, 0, 0.5);
+            --primary-color: #000000; --secondary-color: #FFFF00; --accent-color: #FFFF00;
+            --text-color: #FFFFFF; --bg-color: #000000; --white: #000000;
+            --glass-bg: rgba(0, 0, 0, 0.9); --glass-border: rgba(255, 255, 0, 0.5);
         }
 
-        body.high-contrast .btn {
-            background-color: var(--secondary-color);
-            color: #000;
-            border: 2px solid #000;
-        }
-        
+        body.high-contrast .btn { background-color: var(--secondary-color); color: #000; border: 2px solid #000; }
         body.high-contrast header { background: #000; border-bottom: 2px solid #FFFF00; }
         body.high-contrast .hero::before { background: rgba(0,0,0,0.8); }
 
@@ -120,22 +108,41 @@
         .silo-link { color: var(--secondary-color); font-weight: 700; display: inline-flex; align-items: center; margin-top: 1rem; transition: var(--transition); }
         .silo-link:hover { color: var(--primary-color); gap: 6px; }
 
+        /* SOCIAL PROOF (Testimonios) - RECUPERADO */
+        .social-proof { background-color: #F0F0F0; background-image: url('https://images.unsplash.com/photo-1611252159033-90a941058428?q=80&w=2000&auto=format&fit=crop'); background-attachment: fixed; background-size: cover; }
+        .social-proof::after { content:""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(240, 240, 240, 0.85); z-index: 1; }
+        .social-proof-content { position: relative; z-index: 2; }
+        .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .testimonial-card { background: rgba(255, 255, 255, 0.6); backdrop-filter: var(--glass-blur); border-radius: 10px; border: 1px solid var(--glass-border); padding: 2.5rem; transition: var(--transition); }
+        .testimonial-card:hover { transform: scale(1.02); background: rgba(255, 255, 255, 0.8); }
+        .testimonial-meta { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1rem; }
+        .testimonial-avatar { width: 50px; height: 50px; border-radius: 50%; background-color: #ccc; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--white); font-size: 1.2rem; text-transform: uppercase; }
+        .testimonial-quote { font-style: italic; color: #555; }
+        .testimonial-name { font-weight: 700; color: var(--primary-color); }
+        .testimonial-location { font-size: 0.8rem; color: #777; }
+
+        /* FAQ (Accordion) - RECUPERADO */
+        .faq { background-color: var(--white); }
+        .accordion { max-width: 800px; margin: 0 auto; }
+        .accordion-item { border-bottom: 1px solid rgba(0,0,0,0.08); padding: 1.2rem 0; }
+        .accordion-header { cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.1rem; color: var(--primary-color); }
+        .accordion-content { display: none; padding-top: 1rem; color: #666; }
+        .accordion-header.active + .accordion-content { display: block; }
+        .accordion-icon { transition: var(--transition); font-size: 1.3rem; }
+        .accordion-header.active .accordion-icon { transform: rotate(180deg); }
+
         /* FOOTER MEJORADO */
         footer { background-color: var(--primary-color); color: #FAFAFA; padding: 4rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
         .footer-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; text-align: center; }
-        
         .footer-brand .footer-logo { font-family: var(--font-headings); font-size: 2rem; display: block; margin-bottom: 1rem; color: #FAFAFA;}
         .footer-brand p { opacity: 0.8; font-size: 0.95rem; }
-        
         .footer-links h4, .footer-social-container h4 { font-family: var(--font-headings); font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--secondary-color); }
         .footer-links ul li { margin-bottom: 0.8rem; }
         .footer-links a { opacity: 0.8; transition: var(--transition); }
         .footer-links a:hover { opacity: 1; color: var(--secondary-color); padding-left: 5px; }
-        
         .social-icons { display: flex; gap: 1.5rem; justify-content: center; }
         .social-icons a svg { width: 28px; height: 28px; fill: #FAFAFA; transition: var(--transition); opacity: 0.8; }
         .social-icons a:hover svg { fill: var(--secondary-color); opacity: 1; transform: translateY(-3px); }
-
         .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.6; font-size: 0.85rem; }
 
         /* CTAs FLOTANTES (WhatsApp y Accesibilidad) */
@@ -146,7 +153,6 @@
         .a11y-floating:hover { transform: translateY(-3px); background: var(--white); }
         .a11y-floating svg { width: 24px; height: 24px; fill: currentColor; }
         
-        /* Panel de Accesibilidad */
         .a11y-panel { position: fixed; bottom: 90px; left: 30px; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: 8px; padding: 1.5rem; width: 250px; z-index: 998; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(20px); opacity: 0; pointer-events: none; transition: var(--transition); }
         .a11y-panel.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
         .a11y-panel h4 { margin-bottom: 1rem; color: var(--primary-color); font-family: var(--font-headings); border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 0.5rem;}
@@ -162,6 +168,7 @@
             .menu-toggle { display: none; }
             .hero-content h1 { font-size: 3.8rem; }
             .silos-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
             .footer-grid { grid-template-columns: 1fr 1fr 1fr; text-align: left; }
             .social-icons { justify-content: flex-start; }
         }
@@ -171,14 +178,14 @@
 
     <header id="main-header">
         <div class="container nav-container">
-            <a href="/" class="logo">Jazmin Bags</a>
+            <a href="index.html" class="logo">Jazmin Bags</a>
             <nav>
                 <div class="menu-toggle" id="mobile-menu">☰</div>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/marroquineria/">Marroquinería</a></li>
-                    <li><a href="/complementos/">Complementos</a></li>
-                    <li><a href="/contacto/">Contacto</a></li>
+                    <li><a href="index.html" style="color: var(--secondary-color); font-weight: bold;">Inicio</a></li>
+                    <li><a href="marroquineria.html">Marroquinería</a></li>
+                    <li><a href="complementos.html">Complementos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -190,6 +197,7 @@
                 <h1>Fábrica Directa de Marroquinería y Accesorios Urbanos</h1>
                 <p>Mochilas de cuero, carteras de cuerina resistentes, suéters de hilo y pashminas diseñadas para tu día a día.</p>
                 <a href="#silos" class="btn">Ver Catálogo</a>
+                <a href="contacto.html" class="btn btn-outline">Solicitar Presupuesto</a>
             </div>
         </section>
 
@@ -205,7 +213,7 @@
                         <div class="silo-content">
                             <h3>Marroquinería</h3>
                             <p>Mochilas profesionales, carteras XL y bandoleras urbanas de alta resistencia.</p>
-                            <a href="/marroquineria/" class="silo-link">Ver Modelos →</a>
+                            <a href="marroquineria.html" class="silo-link">Ver Modelos →</a>
                         </div>
                     </article>
                     <article class="silo-card">
@@ -213,9 +221,78 @@
                         <div class="silo-content">
                             <h3>Complementos</h3>
                             <p>Suéters de hilo para media estación y bufandones suaves para el invierno.</p>
-                            <a href="/complementos/" class="silo-link">Ver Complementos →</a>
+                            <a href="complementos.html" class="silo-link">Ver Complementos →</a>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <div class="container social-proof-content">
+                <div class="section-header">
+                    <h2>Nuestras Clientas nos Eligen</h2>
+                    <p>Testimonios reales que avalan nuestra calidad y servicio directo de fábrica.</p>
+                </div>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <p class="testimonial-quote">"Pedí la mochila XL de cuero y es impresionante. Se nota la calidad en las costuras y la resistencia. No vuelvo a comprar en shopping."</p>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-avatar" style="background-color: var(--accent-color)">v</div>
+                            <div>
+                                <p class="testimonial-name">Valeria</p>
+                                <p class="testimonial-location">CABA, Argentina</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="testimonial-card">
+                        <p class="testimonial-quote">"La bandolera texturada es perfecta y la pashmina combinada queda bárbara. Excelente atención directa y el envío fue rápido."</p>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-avatar" style="background-color: var(--secondary-color)">c</div>
+                            <div>
+                                <p class="testimonial-name">Camila</p>
+                                <p class="testimonial-location">San Isidro, GBA</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Preguntas Frecuentes</h2>
+                    <p>Resolvé tus dudas antes de cerrar tu compra directa.</p>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>¿Son fabricantes reales? ¿Dónde están?</span>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Sí, somos fabricantes directos. Nuestra fábrica y taller principal se encuentran en la ciudad de Tigre, Buenos Aires. Podés coordinar para ver los modelos.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>¿Hacen envíos a todo el país? ¿Cuál es el costo?</span>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Hacemos envíos a todo el territorio argentino. El costo se calcula automáticamente antes del pago en base a tu código postal y el peso del pedido.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>¿Qué diferencia hay entre cuero y cuerina en sus productos?</span>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>El cuero es material vacuno genuino, de mayor durabilidad y envejecimiento natural. La cuerina es un material sintético de alta resistencia y estética urbana, ideal para un look casual con menor costo.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -225,17 +302,16 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/" class="footer-logo">Jazmin Bags</a>
+                    <a href="index.html" class="footer-logo">Jazmin Bags</a>
                     <p>Diseño, calidad y venta directa de fábrica. Encontrá tu estilo urbano y funcional con nosotros.</p>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Categorías</h4>
                     <ul>
-                        <li><a href="/marroquineria/">Marroquinería</a></li>
-                        <li><a href="/complementos/">Complementos y Abrigos</a></li>
-                        <li><a href="/nosotros/">Nuestra Fábrica</a></li>
-                        <li><a href="/contacto/">Contacto y Presupuestos</a></li>
+                        <li><a href="marroquineria.html">Marroquinería</a></li>
+                        <li><a href="complementos.html">Complementos y Abrigos</a></li>
+                        <li><a href="contacto.html">Contacto y Presupuestos</a></li>
                     </ul>
                 </div>
                 
@@ -283,7 +359,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Lógica existente: Menú Mobile & Sticky Header
             const menuToggle = document.getElementById('mobile-menu');
             const navLinks = document.getElementById('nav-links');
             menuToggle.addEventListener('click', () => {
@@ -301,31 +376,34 @@
                 header.style.boxShadow = (window.scrollY > 50 ? '0 4px 25px rgba(0,0,0,0.12)' : 'none');
             });
 
-            // LÓGICA DE ACCESIBILIDAD (Vanilla JS)
+            // Lógica del Accordion FAQ recuperada
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+
             const a11yBtn = document.getElementById('a11y-btn');
             const a11yPanel = document.getElementById('a11y-panel');
             const toggleText = document.getElementById('toggle-text');
             const toggleContrast = document.getElementById('toggle-contrast');
 
-            // Mostrar/Ocultar Panel
             a11yBtn.addEventListener('click', () => {
                 a11yPanel.classList.toggle('active');
             });
 
-            // Cerrar panel al hacer click fuera
             document.addEventListener('click', (e) => {
                 if (!a11yPanel.contains(e.target) && !a11yBtn.contains(e.target)) {
                     a11yPanel.classList.remove('active');
                 }
             });
 
-            // Aumentar Texto
             toggleText.addEventListener('click', () => {
                 toggleText.classList.toggle('active');
                 document.body.classList.toggle('large-text');
             });
 
-            // Alto Contraste
             toggleContrast.addEventListener('click', () => {
                 toggleContrast.classList.toggle('active');
                 document.body.classList.toggle('high-contrast');
